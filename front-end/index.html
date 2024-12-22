@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confusion Matrix Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Data Analysis Dashboard</h1>
+        <!-- <input type="file" id="csv-upload" accept=".csv"> -->
+    </header>
+    <div class="container">
+        <h1>Upload CSV Here</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="csvFile" accept=".csv" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    <div id="loadingOverlay">
+        <div id="loadingContainer">
+            <div class="spinner"></div>
+            <div id="loadingText">Analyzing Your Data, Please Wait...</div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>The Data You Uploaded</h1>
+        <div id="cdrTable" style="display: none;">
+            <svg id="cdrSvg"></svg>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Keywords</h1>
+        <div id="keywordChart" style="display: none;">
+            <svg id="keywordSvg"></svg>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Pie Chart of Predicted CDR</h1>
+        <div id="pieChart" style="display: none;">
+            <svg id="pieSvg"></svg>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Confusion Matrix</h1>
+        <div id="confusionMatrix" style="display: none;">
+            <svg id="matrixSvg"></svg>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
